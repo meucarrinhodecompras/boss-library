@@ -648,16 +648,31 @@ footer a{color:var(--muted);text-decoration:underline}
    STICKY BAR mobile
 ════════════════════════════════════════ */
 .sticky{
-  display:none;position:fixed;bottom:0;left:0;right:0;
-  padding:14px 20px;
-  background:rgba(9,0,18,.82);
-  backdrop-filter:blur(18px) saturate(140%);
-  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  position:fixed;bottom:0;left:0;right:0;
+  padding:12px 20px;
+  padding-bottom:calc(12px + env(safe-area-inset-bottom));
+  background:rgba(9,0,18,.92);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
   border-top:1px solid var(--border);
-  z-index:200;justify-content:center;
+  z-index:200;
+  display:none;
+  justify-content:center;
+  align-items:center;
 }
 @media(max-width:640px){.sticky{display:flex}}
-.sticky .btn{width:100%;max-width:400px;padding:15px 24px;font-size:.92rem;min-height:48px}
+.sticky .btn{
+  width:100%;
+  max-width:100%;
+  padding:15px 24px;
+  font-size:.92rem;
+  min-height:48px;
+  white-space:nowrap;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
 
 /* ════════════════════════════════════════
    ANNOUNCEMENT BAR top
